@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+	<head> </head>
+	<body bgcolor = '#E0FFFF'>
+		<h1> Open Review System </h1>
+		<caption> View Reviews</caption>
+		<select>
+			<option value = 'movie'>Movies</option>
+			<option value = 'restaurant' disabled > Restaurants</option>
+		</select>
+		<table border = '1' style = 'width:60%'>
+			<tr>
+				<th>Title</th>
+				<th>Genre</th>
+				<th>Director</th>
+				<th>Plot</th>
+				<th>Rating</th>
+			</tr>
+		<hr/>
+		{% for movie in movies %}
+		<tr class= 'movie'>
+			<td>{{movie.title}}</td>
+			<td>{{movie.genre}}</td>
+			<td>{{movie.director}}</td>
+			<td>{{movie.plot}}</td>
+			<td>{{movie.rating}}</td>
+		</tr>
+		{% endfor %}
+		</table>
+		
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+	<head> </head>
+	<body bgcolor = '#E0FFFF'>
+		<h1> Open Review System </h1>
+		<caption> View Reviews</caption>
+		<select>
+			<option value = 'movie'>Movies</option>
+			<option value = 'restaurant' disabled > Restaurants</option>
+		</select>
+		<table border = '1' style = 'width:60%'>
+			<tr>
+				<th>Title</th>
+				<th>Genre</th>
+				<th>Director</th>
+				<th>Plot</th>
+				<th>Rating</th>
+			</tr>
+		<hr/>
+		{% for mov in movie %}
+		<tr class= 'movie'>
+			<td>{{mov.title}}</td>
+			<td>{{mov.genre}}</td>
+			<td>{{mov.director}}</td>
+			<td>{{mov.plot}}</td>
+			<td>{{mov.rating}}</td>
+		</tr>
+		{% endfor %}
+		</table>
+		<!-- added here -->
+		<hr/>
+		<form action="/" method="post">
+			{% csrf_token %}
+			Name: <input type ="text" name ="name" disabled>
+			Comments: <input type ="text" name ="comment" disabled>
+			<input type ="submit" value ="Submit" disabled />
+		
+		</form>
+		<hr/>
+		<h4>User's comments</h4>
+		<hr/>
+	
+		
+	</body>
+</html>
